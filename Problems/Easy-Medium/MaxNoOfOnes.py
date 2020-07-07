@@ -1,9 +1,14 @@
-#Given a sorted 2D array having 0's and 1's. Find the row which has maximum no of 1's
+# Given a sorted 2D array having 0's and 1's. Find the row which has maximum no of 1's
 
-##Approach - O(m+n)
+# I/P - [[0,0,0], [0,1,1]]
+# 0/P - 1
+
+# Approach - O(m+n)
 #           1. Take 2 pointers i , j for rows and column no respectively
 #           2. Compare  A[i][j] with A[i+1][j], and update j every time if needed.
 #           3. Update row with respect to pointer and comparison between the rows, for more clarity see code
+
+# TC- O(M+N), SC - O(1)
 def f(x): 
     row = 0
     col = len(x[0]) - 1

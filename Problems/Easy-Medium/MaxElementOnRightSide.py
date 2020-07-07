@@ -1,9 +1,14 @@
-#Given an array, replace every element by greater element on right side.
+# Given an array, replace every element by greater element on right side.
 
-#Approach - 1. Start from right side, take a temp variable, 
+# I/P - [16, 17, 4, 3, 5, 2]
+# 0/P - [17, 5, 5, 5, 5, -1]
+
+# Approach - 1. Start from right side, take a temp variable, 
 #           2. Replace the current element A[i] with maximum of A[i+1], temp
 #           3. Update temp with current element
 #           4. Repeat the steps for all the elements
+
+# TC - O(N), SC- O(1) , we have used temp variable not temp array !
 
 def f(x):
     length = len(x)

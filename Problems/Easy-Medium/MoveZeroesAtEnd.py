@@ -1,8 +1,14 @@
-#Given an array move all zeroes to end
+# Given an array move all zeroes to end
 
-#Approach - 1.Take two pointer, 1 curr element pointer, other to replace the current  element with lastnonzero element
+# I/P - [1,0,3,4,5,0,9]
+# O/P - [1,3,4,5,9,0,0]
+
+
+# Approach -1.Take two pointer, 1 curr element pointer, other to replace the current  element with lastnonzero element
 #           2. current pointer - increment everytime
 #           3. second pointer - moves forward only if current element is non zero
+
+# TC - O(N), O(1)
 
 # def f(x):
 #     i = 0
