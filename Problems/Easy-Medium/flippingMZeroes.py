@@ -1,4 +1,14 @@
+# Given a binary array, find the index of zero to be flipped to get max no of consecutive one's where m index can be flipped.
 
+# i/p - 0 1 1 1 0 1 0 1 0 0 1 , m = 2
+# o/p - 4 , 6 
+
+# Approach - Window sliding method
+#  1. Take start and end pointer.
+#  2. Move end untill 2 0's are not encountered.
+#  3. Move start pointer to next when end pointer have encountered more than 1 zero.
+
+# TC - O(n) SC - O(1)
 
 def flippinZeroes(x, n, m):
     end = 0
@@ -17,18 +27,18 @@ def flippinZeroes(x, n, m):
                 zeroCount-=1
             start+=1
 
-        if (end - start > maxWindow) and (zeroCount <= m):
-            maxWindow = end - start
+        if (end - start -1 > maxWindow) and (zeroCount <= m):
+            maxWindow = end - start -1
             wl = start
             
         
-    for i in range(0, maxWindow):
+    for i in range(0, maxWindow + 1 ):
         if x[wl + i] == 0:
             print(wl + i)
 
     
-x = [0, 1, 1, 1, 0, 1, 0, 0, 1, 1]
+x = [0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1]
 n = len(x)
-flippinZeroes(x, n , 0)
+flippinZeroes(x, n , 2)
 
         

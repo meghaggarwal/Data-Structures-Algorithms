@@ -3,7 +3,7 @@
 
 # Approach - Count the individual water trapped in the bar
 
-# Method 1 - Tc - O(N), S(c) - o(1)
+# Method 1 - Tc - O(N2), S(c) - o(1)
 def f(x):
     total = 0
     length = len(x)
@@ -28,6 +28,7 @@ def f1(x):
     l = [0] * length
     r = [0] * length
     r[length - 1] = x[length - 1]
+    l[0] = x[0]
     total = 0
     
     for i in range(1, length ):
@@ -68,4 +69,28 @@ def f2(x):
     
 
 print(f2( [3,0,2,0,4]))
+
+#Method 4 Optimize O(2n) with O(1) Reference Method2 modification
+
+#Approach 
+# We have calculated r[i] when calculating sum, used temp variable instead of right array
+
+def f4(x):
+    length = len(x)
+    l = [0] * length
+    temp = -1
+    total = 0
+    l[0] = x[0]
+    
+    for i in range(1, length ):
+        l[i] = max(x[i], l[i-1])
+
+    for i in range(length - 1, -1, -1):
+        total+= min(l[i], max(x[i], temp)) - x[i]
+        temp = max(x[i], temp)
+
+    return total
+
+print(f4( [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+
 

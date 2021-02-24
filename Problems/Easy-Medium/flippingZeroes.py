@@ -1,4 +1,4 @@
-# Given a binary array, find the index of zero to be flipped to get max no of consecutive one's
+# Given a binary array, find the index of zero to be flipped to get max no of consecutive one's where only 1 index can be flipped.
 
 # i/p - 0 1 1 1 0 1 0 1 0 0 1
 # o/p - 4
@@ -29,14 +29,14 @@ def flippingZeroes(x, n):
             if x[start] == 0:
                 countZero-=1
             start+=1
-        if( (end - start > maxWindow)  and (countZero <= 1)):
+        if( (end - start - 1 > maxWindow)  and (countZero <= 1)):
             
-            maxWindow = end - start
+            maxWindow = end - start - 1 # -1 because we have actually checked 0's occurance till end - 1 not end
             wL = start
-            print(wL, maxWindow, end)
+            print(wL, maxWindow, end - 1)
             #res = zeroIndex
             
-    for i in range(0, maxWindow):
+    for i in range(0, maxWindow + 1):
         if x[wL + i ] == 0:
             print(wL + i)
     

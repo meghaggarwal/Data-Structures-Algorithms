@@ -3,7 +3,7 @@
 # Approach 1 - Window sliding method
 # If at a certain petrol pump available gas is less than zero, move the start pointer
 # End pointer will always move untill end is not equal to start
-# TC - O(n) SC - O(1)
+# TC - O(n) SC - O(1) 
 
 def circularPetrolPump(x, y, n):
 
@@ -22,8 +22,8 @@ def circularPetrolPump(x, y, n):
 
     return start
 
-x = [4,6,1,4]
-y = [6,5,3,5]
+x = [4,6,1,4] #Petrol
+y = [6,5,3,5] #Distance
 n = 4
 
 print(circularPetrolPump(x,y,n))
@@ -63,7 +63,7 @@ def circularTourCheck(x,y,n):
     for i in range(n):
         gasAvailable = 0
         start = i
-        end = (start + 1)%n
+        end = (start + 1)%n 
         flag = True
         while(end != start):
             gasAvailable += x[i] - y[i]

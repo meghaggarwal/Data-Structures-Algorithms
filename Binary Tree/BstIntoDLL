@@ -1,0 +1,38 @@
+
+
+
+struct node* BSTtoDLL(struct node * root) {
+
+  if(!root) {
+    return;
+  }
+
+  temp = newNode()
+  temp->prev = BSTtoDLL(root->left);
+  temp->data = root;
+  temp->next = BSTtoDLL(root->right);
+  return root;
+
+
+}
+
+static node * prev = null
+struct node * BsttoDll(struct node * root) {
+
+if(!root) {
+  return NULL;
+}
+
+BsttoDll(root->left)
+if(prev == null) {
+  root->left = prev;
+  *head = root
+}
+else {
+root ->left = prev
+prev->right = root
+}
+prev = root
+BsttoDll(root->right)
+  
+}
